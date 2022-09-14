@@ -5,18 +5,12 @@
 
 #include "problems.hpp"
 
-OptimisationProblem::OptimisationProblem() {}
-
-Forrester::Forrester() {}
-
-float Forrester::func(std::vector<float> x){
+float Forrester::func(std::vector<float> x) const {
     float _x = x.at(0.0f);
     return (float) pow((6.0f * _x - 2.0f), 2.0f) * sin(12.0f * _x - 4.0f);
 }
 
-Levy::Levy() {}
-
-float Levy::func(std::vector<float> x){
+float Levy::func(std::vector<float> x) const {
 
     int d = x.size();
 

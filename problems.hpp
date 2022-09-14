@@ -5,23 +5,17 @@
 
 class OptimisationProblem {
     public:
-        OptimisationProblem();
-        
-        virtual float func(std::vector<float> x) = 0;
+        virtual float func(std::vector<float> x) const = 0;
 };
 
 class Forrester : public OptimisationProblem {
     public:
-        Forrester();
-
-        virtual float func(std::vector<float> x);
+        float func(std::vector<float> x) const;
 };
 
 class Levy : public OptimisationProblem {
     public:
-        Levy();
-        
-        virtual float func(std::vector<float> x);
+        float func(std::vector<float> x) const;
 };
 
 #endif // __PROBLEMS_H_INCLUDED__

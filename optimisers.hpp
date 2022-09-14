@@ -1,18 +1,17 @@
 #ifndef __OPTIMISERS_H_INCLUDED__
 #define __OPTIMISERS_H_INCLUDED__
 
-// Forward declared dependencies
-class OptimisationProblem;
+#include <vector>
+#include "problems.hpp"
 
 class Optimiser{
     public:
-        Optimiser();
-        virtual void RunOptimiser(int num_steps, OptimisationProblem f) = 0;
+        virtual std::vector<float> RunOptimisation(const OptimisationProblem *problem, int num_steps) const = 0;
 };
 
-class LocalRandomSearch{
+class LocalRandomSearch : public Optimiser{
     public:
-        void RunOptimiser(int num_steps, OptimisationProblem f);
+        std::vector<float> RunOptimisation(const OptimisationProblem *problem, int num_steps) const;
 };
 
 #endif // __OPTIMISERS_H_INCLUDED__
