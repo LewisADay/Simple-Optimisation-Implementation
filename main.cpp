@@ -12,8 +12,12 @@ int main(int argc, char** argv)
     // Setup random number generation
     std::srand(time(nullptr));
 
-    // Haven't used Clap before, so did this simple command line
+    // Haven't used Clap before, so I did this simple command line
     // input system for ease and minor validaton.
+    // Playing around with Clap is now on my todo list, but didn't want to waste time on it
+    // for the sake of this already over-time project - it was fun (read: frustrating at times)
+    // to do c++ again, but towards the end I somewhat felt like I knew what I was doing
+    // which is how I know I have a long way to go.
 
     // Command line input validation
     if (argc != 3) {

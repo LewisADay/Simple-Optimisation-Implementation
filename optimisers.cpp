@@ -35,9 +35,6 @@ std::vector<float> Optimiser::GetInitialLocation(const OptimisationProblem *prob
     // Get problem dimension
     int d = (*problem).dim;
 
-    // Setup random number generation
-    //std::srand(time(nullptr));
-
     // Get initial location
     std::vector<float> init_x;
     float best_y;
@@ -123,7 +120,6 @@ SimulatedAnnealing::SimulatedAnnealing(float r, float T, float a) {
 }
 
 std::vector<float> SimulatedAnnealing::RunOptimisation(const OptimisationProblem *problem, int num_steps) const {
-    // Set radius
 
     // Get starting location
     std::vector<float> best_x = Optimiser::GetInitialLocation(problem);
