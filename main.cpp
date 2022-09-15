@@ -22,7 +22,7 @@ int main(int argc, char** argv)
     // Command line input validation
     if (argc != 3) {
         std::cout   << "Please provide appropriate inputs of the form\n"
-                    << "process-name <Problem> <Method>"
+                    << "process-name <Problem> <Optimiser>"
                     << std::endl;
         return -1;
     }
