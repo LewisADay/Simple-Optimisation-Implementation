@@ -5,11 +5,53 @@
 
 #include "problems.hpp"
 
+// Base class methods
+// Constructor
+OptimisationProblem::OptimisationProblem() {}
+
+// Getters and setters for dim and limits
+float OptimisationProblem::get_dim() {
+    return this->dim;
+}
+
+void OptimisationProblem::set_dim(int d) {
+    this->dim = d;
+}
+
+lim OptimisationProblem::get_limits() {
+    return this->limits;
+}
+
+void OptimisationProblem::set_limits(float l, float u) {
+    this->limits.lower = l;
+    this->limits.upper = u;
+}
+
+
+// Forrester problem class
+// http://www.sfu.ca/~ssurjano/forretal08.html
+// Constructor
+Forrester::Forrester() {
+    this->set_dim(1);
+    this->set_limits(0.0f, 1.0f);
+}
+
+// Function call
 float Forrester::func(std::vector<float> x) const {
     float _x = x.at(0.0f);
     return (float) pow((6.0f * _x - 2.0f), 2.0f) * sin(12.0f * _x - 4.0f);
 }
 
+// Levy problem class
+// http://www.sfu.ca/~ssurjano/levy.html
+// Has arbitrary dimension >= 2, we use d = 2 for demonstration
+// Constructor
+Levy::Levy(int d) {
+    this->set_dim(d);
+    this->set_limits(-10.0f, 10.0f);
+}
+
+// Function call
 float Levy::func(std::vector<float> x) const {
 
     int d = x.size();
