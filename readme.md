@@ -1,4 +1,4 @@
-# Simple-Optimisation-Implementation
+# Simple Optimisation Implementation
 
 Small program written in C++14 with the simple command line interface
 > program-name \<Problem\> \<Optimiser\>
